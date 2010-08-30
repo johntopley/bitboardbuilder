@@ -1,0 +1,3 @@
+= Bitboard Builder
+
+Bitboard Builder is a simple application for visualising {bitboard}[http://en.wikipedia.org/wiki/Bitboard] data structures used in chess game programming.

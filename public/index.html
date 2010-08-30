@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Bitboard Builder</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+    <div id="doc4" class="yui-t3">
+      <div id="hd" role="banner">
+        <h1>Bitboard Builder</h1>
+      </div>
+      <div id="bd" role="main">
+        <div id="yui-main">
+          <div class="yui-b">
+            <div class="yui-g">
+              <form action="">
+                <fieldset>
+                  <table summary="">
+                    <tbody>
+                      <tr>
+                        <td />
+                        <td>a</td>
+                        <td>b</td>
+                        <td>c</td>	                    
+                        <td>d</td>
+                        <td>e</td>
+                        <td>f</td>	                    
+                        <td>g</td>
+                        <td>h</td>
+                        <td />
+                      </tr>
+                      <tr>
+                        <td class="file">8</td>
+                        <td class="light"><input id="a8" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="b8" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="c8" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="dark"><input id="d8" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="e8" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="f8" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="light"><input id="g8" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="h8" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="file">8</td>
+                      </tr>
+                      <tr>
+                        <td class="file">7</td>
+                        <td class="dark"><input id="a7" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="b7" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="c7" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="light"><input id="d7" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="e7" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="f7" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="dark"><input id="g7" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="h7" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="file">7</td>
+                      </tr>
+                      <tr>
+                        <td class="file">6</td>
+                        <td class="light"><input id="a6" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="b6" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="c6" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="dark"><input id="d6" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="e6" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="f6" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="light"><input id="g6" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="h6" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="file">6</td>
+                      </tr>
+                      <tr>
+                        <td class="file">5</td>
+                        <td class="dark"><input id="a5" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="b5" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="c5" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="light"><input id="d5" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="e5" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="f5" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="dark"><input id="g5" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="h5" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="file">5</td>
+                      </tr>
+                      <tr>
+                        <td class="file">4</td>
+                        <td class="light"><input id="a4" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="b4" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="c4" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="dark"><input id="d4" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="e4" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="f4" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="light"><input id="g4" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="h4" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="file">4</td>
+                      </tr>
+                      <tr>
+                        <td class="file">3</td>
+                        <td class="dark"><input id="a3" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="b3" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="c3" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="light"><input id="d3" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="e3" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="f3" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="dark"><input id="g3" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="h3" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="file">3</td>
+                      </tr>
+                      <tr>
+                        <td class="file">2</td>
+                        <td class="light"><input id="a2" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="b2" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="c2" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="dark"><input id="d2" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="e2" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="f2" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="light"><input id="g2" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="h2" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="file">2</td>
+                      </tr>
+                      <tr>
+                        <td class="file">1</td>
+                        <td class="dark"><input id="a1" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="b1" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="c1" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="light"><input id="d1" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="dark"><input id="e1" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="f1" type="text" size="2" maxlength="1" value="0" /></td>	                    
+                        <td class="dark"><input id="g1" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="light"><input id="h1" type="text" size="2" maxlength="1" value="0" /></td>
+                        <td class="file">1</td>
+                      </tr>
+                      <tr>
+                        <td />
+                        <td>a</td>
+                        <td>b</td>
+                        <td>c</td>	                    
+                        <td>d</td>
+                        <td>e</td>
+                        <td>f</td>	                    
+                        <td>g</td>
+                        <td>h</td>
+                        <td />
+                      </tr>
+                    </tbody>
+                  </table>
+                </fieldset>
+                <fieldset>
+                  <p><input id="name" type="text" size="68" maxlength="60" /> <input id="save" type="submit" value="Save" disabled="disabled" /> <input id="reset" type="button" value="Reset" /></p>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="data" class="yui-b">
+          <h2>Data</h2>
+          <ul>
+            <li>Binary: 0</li>
+            <li>Decimal: 0</li>
+          </ul>
+        </div>
+        <div class="yui-b">
+          <h2>Saved Bitboards</h2>
+          <ul>
+            <li><a href="#">White Pawns</a></li>
+            <li><a href="#">White Knights</a></li>
+            <li><a href="#">Black Pawns</a></li>
+            <li><a href="#">Black Knights</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="ft" role="contentinfo">
+        <p>©2010 <a href="http://johntopley.com/">John Topley</a> | <a href="http://github.com/johntopley/bitboardbuilder">Source</a></p>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="application.js"></script>  
+  </body>
+</html>
