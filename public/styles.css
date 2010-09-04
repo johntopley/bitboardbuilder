@@ -16,6 +16,21 @@ a:hover {
   color: #000;
 }
 
+a.delete {
+  padding: 0;
+}
+
+a.delete:hover {
+  background-color: #fff;
+  border-bottom: none;
+  color: #999;
+}
+
+.delete img {
+  border: 0;
+  margin-right: 5px;
+}
+
 h1, h2 {
   color: #999;
 }
@@ -37,7 +52,7 @@ fieldset p {
   margin-top: 20px;
 }
 
-ul {
+ul, #data table {
   color: #999;
   font-size: 90%;
   margin: 10px 0 0 20px;
@@ -45,20 +60,6 @@ ul {
 
 li {
   margin-bottom: 8px;
-}
-
-table {
-  border-collapse: collapse;
-  border: 1px solid #ccc;
-} 
-
-tr {
-  text-align: center;
-}
-
-td {
-  color: #999;
-  padding: 5px;
 }
 
 td input {
@@ -69,6 +70,14 @@ td input {
 
 #data {
   margin-bottom: 50px;
+}
+
+#data td {
+  padding-bottom: 8px;
+}
+
+#decimal, #hexadecimal {
+  padding-left: 10px;
 }
 
 .dark, .light {
@@ -90,4 +99,18 @@ td input {
 
 .yui-g {
   margin-bottom: 50px;
+}
+
+.yui-g table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+} 
+
+.yui-g tr {
+  text-align: center;
+}
+
+.yui-g td {
+  color: #999;
+  padding: 5px;
 }
