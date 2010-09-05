@@ -22,6 +22,7 @@ function handleEvents() {
     var decimal = parseInt(bitboard, 2);
     $("#decimal").html(decimal);
     $("#hexadecimal").html(decimal.toString(16));
+    $.post("/", { name: $name.val(), bits: bitboard });
   });
   $("form").submit(function() {
     return false;
