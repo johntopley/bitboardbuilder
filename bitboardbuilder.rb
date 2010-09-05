@@ -16,8 +16,18 @@ configure :development do
   DataMapper.auto_upgrade!
 end
 
+helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+end
+
+before do
+  headers 'Content-Type' => 'text/html; charset=utf-8'
+  @bitboards = BitBoard.all(:order => [ :name.asc ])
+end
+
 get '/' do
-  redirect '/index.html'
+  erb :index
 end
 
 post '/' do

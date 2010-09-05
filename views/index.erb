@@ -143,7 +143,7 @@
                   </table>
                 </fieldset>
                 <fieldset>
-                  <p><input id="name" type="text" size="68" maxlength="60" /> <input id="save" type="submit" value="Save" disabled="disabled" /> <input id="reset" type="button" value="Reset" /></p>
+                  <p><input id="name" type="text" size="68" maxlength="50" /> <input id="save" type="submit" value="Save" disabled="disabled" /> <input id="reset" type="button" value="Reset" /></p>
                 </fieldset>
               </form>
             </div>
@@ -167,10 +167,9 @@
         <div class="yui-b">
           <h2>Saved Bitboards</h2>
           <ul>
-            <li><a href="#" class="delete"><img src="delete.png" alt="Delete" title="Delete" height="16" width="16" /></a><a href="#" class="filename">White Pawns</a></li>
-            <li><a href="#" class="delete"><img src="delete.png" alt="Delete" title="Delete" height="16" width="16" /></a><a href="#" class="filename">White Knights</a></li>
-            <li><a href="#" class="delete"><img src="delete.png" alt="Delete" title="Delete" height="16" width="16" /></a><a href="#" class="filename">Black Pawns</a></li>
-            <li><a href="#" class="delete"><img src="delete.png" alt="Delete" title="Delete" height="16" width="16" /></a><a href="#" class="filename">Black Knights</a></li>
+          <% @bitboards.each do |bitboard| %>
+            <li><a href="#" class="delete"><img src="delete.png" alt="Delete" title="Delete" height="16" width="16" /></a><a href="#" class="filename"><%= h bitboard.name %></a></li>
+          <% end %>
           </ul>
         </div>
       </div>
