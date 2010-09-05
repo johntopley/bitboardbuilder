@@ -80,6 +80,10 @@ td input {
   padding-left: 10px;
 }
 
+#name {
+  margin: 0 5px;
+}
+
 .dark, .light {
   height: 60px;
   width: 60px;

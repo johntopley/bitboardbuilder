@@ -19,6 +19,10 @@ end
 helpers do
   include Rack::Utils
   alias_method :h, :escape_html
+
+  def strip_id_prefix(id)
+    id.sub(/^file-/, "")
+  end
 end
 
 before do
@@ -30,6 +34,17 @@ get '/' do
   erb :index
 end
 
+get '/:id' do
+  bitboard = BitBoard.get(strip_id_prefix(params[:id]))
+  bitboard.bits
+end
+
 post '/' do
   BitBoard.create(:name => params[:name], :bits => params[:bits], :created_at => Time.now)
+  erb :bitboards
+end
+
+post '/delete/:id' do
+  bitboard = BitBoard.get(strip_id_prefix(params[:id]))
+  bitboard.destroy
 end

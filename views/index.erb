@@ -143,14 +143,14 @@
                   </table>
                 </fieldset>
                 <fieldset>
-                  <p><input id="name" type="text" size="68" maxlength="50" /> <input id="save" type="submit" value="Save" disabled="disabled" /> <input id="reset" type="button" value="Reset" /></p>
+                  <p><label for="name">Name</label> <input id="name" type="text" size="60" maxlength="50" /> <input id="save" type="submit" value="Save" disabled="disabled" /> <input id="reset" type="button" value="Reset" /></p>
                 </fieldset>
               </form>
             </div>
           </div>
         </div>
         <div id="data" class="yui-b">
-          <h2>Data</h2>
+          <h2></h2>
           <table summary="">
             <tbody>
               <tr>
@@ -166,10 +166,8 @@
         </div>
         <div class="yui-b">
           <h2>Saved Bitboards</h2>
-          <ul>
-          <% @bitboards.each do |bitboard| %>
-            <li><a href="#" class="delete"><img src="delete.png" alt="Delete" title="Delete" height="16" width="16" /></a><a href="#" class="filename"><%= h bitboard.name %></a></li>
-          <% end %>
+          <ul id="bitboards">
+          <%= erb :bitboards %>
           </ul>
         </div>
       </div>

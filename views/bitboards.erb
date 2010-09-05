@@ -1,0 +1,3 @@
+<% @bitboards.each do |bitboard| %>
+  <li id="file-<%= bitboard.id %>"><a href="#" class="delete"><img src="delete.png" alt="Delete" title="Delete" height="16" width="16" /></a><a href="#" class="filename"><%= h bitboard.name %></a></li>
+<% end %>
