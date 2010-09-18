@@ -20,6 +20,14 @@ helpers do
   include Rack::Utils
   alias_method :h, :escape_html
 
+  def get_bitboard(id)
+    BitBoard.get(strip_id_prefix(id))
+  end
+
+  def get_bitboards
+    @bitboards = BitBoard.all(:order => [ :name.asc ])
+  end
+
   def strip_id_prefix(id)
     id.sub(/^file-/, "")
   end
@@ -27,24 +35,25 @@ end
 
 before do
   headers 'Content-Type' => 'text/html; charset=utf-8'
-  @bitboards = BitBoard.all(:order => [ :name.asc ])
 end
 
 get '/' do
+  get_bitboards
   erb :index
 end
 
-get '/:id' do
-  bitboard = BitBoard.get(strip_id_prefix(params[:id]))
+get '/show/:id' do
+  bitboard = get_bitboard(params[:id])
   bitboard.bits
 end
 
 post '/' do
   BitBoard.create(:name => params[:name], :bits => params[:bits], :created_at => Time.now)
+  get_bitboards
   erb :bitboards
 end
 
 post '/delete/:id' do
-  bitboard = BitBoard.get(strip_id_prefix(params[:id]))
+  bitboard = get_bitboard(params[:id])
   bitboard.destroy
 end
