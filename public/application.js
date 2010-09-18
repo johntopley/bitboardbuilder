@@ -16,22 +16,15 @@ function handleEvents() {
 
   $reset.click(function() {
     reset();
-    $("#decimal").html("0");
-    $("#hexadecimal").html("0");
-    $("#data").find("h2").html("");
-    document.title = "Bitboard Builder";
   });
 
   $save.click(function() {
     var name = $name.val();
     var bitboard = serialize();
-    var decimal = parseInt(bitboard, 2);
-    $("#decimal").html(decimal);
-    $("#hexadecimal").html(decimal.toString(16));
     $.post("/", { name: name, bits: bitboard }, function(bitboards) {
       $("#bitboards").html(bitboards);
       $("#data").find("h2").html(name);
-      document.title = name + " - Bitboard Builder";
+      displayBitboardDetails(name, bitboard);
       $name.val("");
     });
   });
@@ -47,6 +40,7 @@ function handleEvents() {
     if (result) {
       $.post("/delete/" + $item.parent().attr("id"), function(data) {
         $item.parent().fadeOut();
+        reset();
       });
     }
     event.preventDefault();
@@ -55,13 +49,10 @@ function handleEvents() {
   $(".filename").click(function(event) {
     var $item = $(this);
     var name = $item.html();
-    $.get("/" + $item.parent().attr("id"), function(bitboard) {
+    $.get("/show/" + $item.parent().attr("id"), function(bitboard) {
       deserialize(bitboard);
       $("#data").find("h2").html(name);
-      document.title = name + " - Bitboard Builder";
-      var decimal = parseInt(bitboard, 2);
-      $("#decimal").html(decimal);
-      $("#hexadecimal").html(decimal.toString(16));
+      displayBitboardDetails(name, bitboard);
     })
     event.preventDefault();
   });
@@ -73,7 +64,18 @@ function deserialize(bitboard) {
   });
 }
 
+function displayBitboardDetails(name, bitboard) {
+  var decimal = parseInt(bitboard, 2);
+  document.title = name + " - Bitboard Builder";
+  $("#decimal").html(decimal);
+  $("#hexadecimal").html(decimal.toString(16));
+}
+
 function reset() {
+  $("#decimal").html("0");
+  $("#hexadecimal").html("0");
+  $("#data").find("h2").html("");
+  document.title = "Bitboard Builder";
   walkBoard(function(rank, file, count) {
     $("#" + FILES[file] + rank).val("0");
   });
