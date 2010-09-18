@@ -12,7 +12,7 @@ class BitBoard
   property :created_at, DateTime
 end
 
-configure do
+configure :production do
   DataMapper.auto_upgrade!
 end
 
