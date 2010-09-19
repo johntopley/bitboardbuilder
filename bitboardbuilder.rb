@@ -12,7 +12,7 @@ class BitBoard
   property :created_at, DateTime
 end
 
-configure :development do
+configure do
   DataMapper.auto_upgrade!
 end
 
@@ -22,10 +22,6 @@ helpers do
 
   def get_bitboard(id)
     BitBoard.get(strip_id_prefix(id))
-  end
-
-  def get_bitboards
-    @bitboards = BitBoard.all(:order => [ :name.asc ])
   end
 
   def strip_id_prefix(id)
@@ -38,7 +34,7 @@ before do
 end
 
 get '/' do
-  get_bitboards
+  @bitboards = BitBoard.all(:order => [:name.asc])
   erb :index
 end
 
@@ -49,7 +45,7 @@ end
 
 post '/' do
   BitBoard.create(:name => params[:name], :bits => params[:bits], :created_at => Time.now)
-  get_bitboards
+  @bitboards = BitBoard.all(:order => [:name.asc])
   erb :bitboards
 end
 
