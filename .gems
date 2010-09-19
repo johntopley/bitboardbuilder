@@ -1,4 +1,5 @@
 sinatra
+datamapper
 dm-core
 dm-timestamps
 dm-postgres-adapter
