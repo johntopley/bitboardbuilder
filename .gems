@@ -1,3 +1,4 @@
 sinatra
 datamapper
 do_postgres
+dm-postgres-adapter
