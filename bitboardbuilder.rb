@@ -1,7 +1,5 @@
 require 'sinatra'
 require 'datamapper'
-require 'dm-core'
-require 'dm-timestamps'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/bitboards.db")
 
