@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'datamapper'
 require 'dm-core'
 require 'dm-timestamps'
 
